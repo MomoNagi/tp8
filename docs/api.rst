@@ -10,7 +10,7 @@ Module principal (C++)
 
 Tests unitaires
 ---------------
-.. automodule:: tests.test_cum_médiane
+.. automodule:: tests.test_cum_mediane
    :members:
    :undoc-members:
    :show-inheritance:
