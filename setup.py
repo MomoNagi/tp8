@@ -9,7 +9,7 @@ ext_modules = [
 ]
 
 setup(
-    name="add_dpkg_interface",
+    name="cum_ext_module",
     author="Manh Hung Le",
     author_email="manh.hung.le@usherbrooke.ca",
     description="TP8",
