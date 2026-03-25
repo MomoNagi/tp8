@@ -13,3 +13,4 @@ Tests unitaires
 .. automodule:: tests.test_cum_médiane
    :members:
    :undoc-members:
+   :show-inheritance:
