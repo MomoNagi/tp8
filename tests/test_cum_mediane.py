@@ -23,6 +23,23 @@ def test_erreurs_données_répétées():
     with pytest.raises(RuntimeError, match="Duplicate data detected!"):
         cum_ext_module.cum_médiane(data)
 
+def test_tableau_vide():
+    """
+    Vérifie la validation de la taille du tableau d'entrée.
+
+    S'assure que l'interface lève une erreur explicite lorsqu'un tableau 
+    vide est fourni. Un tableau vide n'a pas de médiane.
+
+    Raises
+    ------
+    ValueError
+        Si le tableau fourni a une taille de zéro.
+    """
+    data = np.array([], dtype=np.float64)
+    with pytest.raises(ValueError, match="Le tableau d'entrée ne peut pas être vide."):
+        cum_ext_module.cum_médiane(data)
+
+
 def test_données():
     """Vérifie le calcul de la médiane cumulative
 

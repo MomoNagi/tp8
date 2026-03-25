@@ -5,9 +5,6 @@
 int cum_médiane
 (const double* donnees_ptr, const int taille, double* sortie_ptr){
     std::set<double> unique_values;
-    if (taille < 1) {
-        return ERROR_DONNÉES_RÉPÉTÉES;
-    }
     for (int idx = 0; idx < taille; ++idx){
         double value = donnees_ptr[idx];
 

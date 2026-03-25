@@ -7,13 +7,16 @@ namespace py = pybind11;
 py::array_t<double> interface_cum_médiane(py::array_t<double> numpy_array_de_doubles) {
 
     py::buffer_info buf = numpy_array_de_doubles.request();
+    int taille = static_cast<int> (buf.size);
+    if (taille == 0) {
+        throw py::value_error("Le tableau d'entrée ne peut pas être vide.");
+    }
 
     auto result = py::array_t<double>(buf.size);
     py::buffer_info res_buf = result.request();
 
     double *donnees_ptr = static_cast<double *>(buf.ptr);
     double *sortie_ptr = static_cast<double *>(res_buf.ptr);
-    int taille = static_cast<int> (buf.size);
 
     int status = cum_médiane(donnees_ptr, taille, sortie_ptr);
 
@@ -47,6 +50,8 @@ PYBIND11_MODULE(cum_ext_module, m, py::mod_gil_not_used()) {
 
     Raises
     ------
+    ValueError
+        Si le tableau d'entrée est vide.
     RuntimeError
         Si le tableau contient des données répétées (doublons).
 
