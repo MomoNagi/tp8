@@ -1,7 +1,7 @@
-Référence de l'API
-==================
+API Documentation
+=================
 
-Module principal (C++)
+Module principal
 ----------------------
 .. automodule:: cum_ext_module
    :members:
