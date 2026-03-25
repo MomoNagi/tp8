@@ -42,4 +42,4 @@ def test_données():
 
     résultat = cum_ext_module.cum_médiane(data)
 
-    np.testing.assert_array_equal(résultat, sortie_attendue)
+    np.testing.assert_array_equal(résultat, sortie_attendue) 
